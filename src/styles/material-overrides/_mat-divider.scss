@@ -1,0 +1,11 @@
+@import 'src/styles/partials/variables';
+
+mat-divider {
+  &.neutral-2 {
+    border-top-color: $color-neutral-2;
+  }
+
+  &.neutral-blue-6 {
+    border-top-color: $color-neutral-blue-6;
+  }
+}

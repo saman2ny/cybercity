@@ -1,0 +1,12 @@
+@import "../../styles/partials/variables";
+
+.mat-tooltip {
+  background-color: $color-dark-blue;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  max-width: unset !important;
+}

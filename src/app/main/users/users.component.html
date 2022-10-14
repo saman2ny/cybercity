@@ -1,0 +1,35 @@
+<!-- <section class="max-width-lg" fxLayout="column" fxLayoutAlign="center center"> -->
+
+<div class="mb-24">
+
+  <div class="max-width-lg pt-50">
+    <div fxLayout="row" fxLayoutAlign="start space-between">
+      <button class="white mr-4 ml-auto" (click)="invite()">
+        <div fxLayout="row">
+          <i-feather name="plus" class="icon-sm mr-12 mb-8 mt-4"></i-feather>
+          <span> {{'USERS.INVITE' | transloco }}</span>
+        </div>
+      </button>
+      <button class="white mr-4 ml-auto">
+        <div fxLayout="row">
+          <i-feather name="mail" class="icon-sm mb-4 mt-4"></i-feather>
+        </div>
+      </button>
+      <div class="mr-4 mt-16 ml-auto mat-subheading-2"> 2 / 100 Users</div>
+      <div class="mr-4 mt-16 ml-auto mat-subheading-2 btn-link"> Change Number of seats</div>
+      <div class="form-field mr-4  ml-auto" fxLayout="column">
+        <input type="text" name="search" placeholder="Search Users">
+      </div>
+    </div>
+
+    <div class="pt-100">
+
+      <!-- <app-mat-table [users]="users" [displayedColumns]="displayedColumns" [totalRows]="totalRows"
+        [currentPage]="currentPage" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (loadPage)="loadAllDetail($event)"></app-mat-table> -->
+
+    </div>
+  </div>
+
+</div>
+<!-- </section> -->

@@ -1,0 +1,121 @@
+<div class="contact-us-dialog h-100-percent" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div class="mat-title mb-24" *ngIf="inviteUser || inviteMultipleUser">Invite Users</div>
+    <div class="mat-title mb-24" *ngIf="inviteUserByLink">Share your team's invite link</div>
+    <i-feather name="X" (click)="sidenavService.closeLeftSidenav()"></i-feather>
+  </div>
+
+
+  <!-- validations? -->
+  <mat-divider class="mb-28"></mat-divider>
+
+  <ng-container *ngIf="inviteUser">
+    <form class="mb-20">
+      <div class="form-field" fxLayout="column">
+        <label class="mb-24">Each person will receive an email with their login information and a link to your
+          account</label>
+        <input class="p-10" placeholder="Email id" required>
+      </div>
+    </form>
+
+    <span fxLayout="row" class="mat-subheading-2 field-filter-row cursor-pointer w-100-percent pl-6 pr-6"
+      fxLayoutAlign="start center">
+      <i-feather name="square" class="checkbox-icon mr-20"></i-feather>Add new users to all projects
+    </span>
+
+    <mat-divider class="mb-28"></mat-divider>
+
+
+    <span fxLayout="row" class="mat-title w-100-percent pl-6 pr-6" fxLayoutAlign="start center">
+      Which superpowers, if any, should they have?</span>
+
+    <span fxLayout="row" class="mat-subheading-2 field-filter-row cursor-pointer w-100-percent pl-6 pr-6"
+      fxLayoutAlign="start center">
+      <i-feather name="square" class="checkbox-icon mr-20"></i-feather>Can manage all invoices, rates, projects (Time
+      Tracking Administrator)
+    </span>
+
+
+    <span fxLayout="row" class="mat-subheading-2 field-filter-row cursor-pointer w-100-percent pl-6 pr-6"
+      fxLayoutAlign="start center">
+      <i-feather name="square" class="checkbox-icon mr-20"></i-feather>Can create new projects
+    </span>
+
+
+
+    <span fxFlex="0.9 1 auto"></span>
+    <mat-divider class="mb-28"></mat-divider>
+
+    <div fxLayout="row" class="pl-6 pr-6" fxLayoutAlign="space-between center">
+      <button class="btn-link" type="button" (click)="InviteLink()">Invite Users by Link</button>
+      <button class="btn-link" type="button" (click)="InviteMultipleUser()">Invite Multiple Users Once</button>
+      <button class="white" (click)="sidenavService.closeLeftSidenav()">Cancel</button>
+      <button class="white">Invite User</button>
+    </div>
+  </ng-container>
+
+
+
+  <ng-container *ngIf="inviteUserByLink">
+    <div class="form-field" fxLayout="column">
+      <label class="mb-24">Anyone can use this link to join your People group.</label>
+
+      <div fxLayout="row" class="pl-6 pr-6" fxLayoutAlign="space-between center">
+        <input class="p-10" placeholder="Email Link" required>
+        <button class="white">Copy</button>
+      </div>
+
+      <div fxLayout="row" class="pl-6 pr-6 mat-subheading-2 mt-20">
+        <i-feather name="shield" class="mr-20"></i-feather>
+        Link expires in one week.
+      </div>
+      <div fxLayout="row" class="pl-6 pr-6 mat-subheading-2">
+        <i-feather name="shield" class="mr-20"></i-feather>
+        Invitees won't have any superpowers by default.
+      </div>
+
+    </div>
+
+
+    <span fxFlex="0.9 1 auto"></span>
+    <mat-divider class="mb-28"></mat-divider>
+
+    <div fxLayout="row" class="pl-6 pr-6" fxLayoutAlign="space-between center">
+      <button class="btn-link" type="button" (click)="InviteEmail()">Invite Users by Email</button>
+    </div>
+  </ng-container>
+
+
+
+  
+  <ng-container *ngIf="inviteMultipleUser">
+    <div class="form-field-multiple" fxLayout="column">
+      <label class="mb-24">Paste here the content of a CSV file.</label>
+      <div fxLayout="row" class="pl-6 pr-6" fxLayoutAlign="space-between center">
+        <textarea class="p-10" placeholder="Paste Email's" required></textarea>
+      </div>
+
+      <label class="mt-24 mb-24">Columns are separated by.</label>
+      <div fxLayout="row" class="pl-6 pr-6" fxLayoutAlign="space-between center">
+       <select>
+         <option value="commas">,(commas)</option>
+         <option value="semicolon">:(semicolon)</option>
+       </select>
+      </div>
+
+
+    </div>
+
+
+    <span fxFlex="0.9 1 auto"></span>
+    <mat-divider class="mb-28"></mat-divider>
+
+ 
+    <div fxLayout="row" class="pl-6 pr-6" fxLayoutAlign="space-between center">
+      <button class="white" (click)="sidenavService.closeLeftSidenav()">Cancel</button>
+      <button class="white">Invite User</button>
+    </div>
+
+  </ng-container>
+
+</div>

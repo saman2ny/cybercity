@@ -1,0 +1,11 @@
+@import "src/styles/partials/variables";
+
+:host {
+  position: relative;
+}
+
+mat-error {
+  position: absolute;
+  color: $color-temenos-orange !important;
+  font-size: 12px !important;
+}

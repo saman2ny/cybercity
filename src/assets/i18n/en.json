@@ -1,0 +1,64 @@
+{
+  "BUTTONS": {
+    "CLEAR": "Clear",
+    "SUBMIT": "Submit",
+    "BACK": "Back",
+    "UPDATE": "Update"
+  },
+  "HEADERS": {
+    "USERNAME": "User Name",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "DATE": "Choose a date",
+    "SUCCESS": "Success"
+  },
+  "ERRORS": {
+    "REQUIRED": "Required",
+    "USERNAME": "Username is",
+    "EMAIL": "Email is",
+    "KINDLY": "Kindly enter valid",
+    "EMAIL_ADDRESS": "Email Address",
+    "PHONE": "Phone Number is",
+    "AVATAR": "Avatar is",
+    "CREATED_AT": "Create At is"
+  },
+  "USER_MANAGEMENT": {
+    "USER_MANAGEMENT": "User Management",
+    "LIST_PAGE": "User List",
+    "ADD": "Add User"
+  },
+  "ERROR_PAGES": {
+    "404_NOT_FOUND": {
+      "404_ERROR": "404 Error",
+      "DESCRIPTION": "Sorry! The page you are looking for is not found",
+      "BACK": "Go back",
+      "REPORT": "Report"
+    }
+  },
+
+  "USERS": {
+"INVITE": "Invite people",
+"CREATE_GROUP": "Create group"
+  },
+  "TOOLBAR": {
+    "REPORTS": "REPORTS",
+    "CONTACT_US": "Contact Us",
+    "DASHBOARD": "DASHBOARD",
+    "PROJECTS": "PROJECTS",
+    "MY_SANDBOX": "MY SANDBOX",
+    "MY_PROFILE": "MY PROFILE",
+    "USERS": "USERS",
+    "ATTENDANCE": "ATTENDANCE",
+    "TIMESHEET_APPROVAL": "TIMESHEET APPROVAL"
+  },
+  "USER_MENU": {
+    "LOGOUT": "Logout",
+    "SETTINGS": "Settings"
+
+  },
+  "FOOTER": {
+    "COPYRIGHT": "Copyright {{year}} Cybercity Headqarters |",
+    "PRIVACY_POLICY": "Privacy policy",
+    "TERMS_AND_CONDITIONS": "Terms and conditions"
+  }
+}

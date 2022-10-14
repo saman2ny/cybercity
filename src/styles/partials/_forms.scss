@@ -1,0 +1,106 @@
+@mixin form-field-width($width) {
+  width: $width;
+  max-width: $width;
+  margin-bottom: 22px;
+}
+
+.form-field {
+  label {
+    font-size: 10px;
+    line-height: 16px;
+    font-weight: bold !important;
+    letter-spacing: 1.5px;
+  }
+  @include form-field-width(330px);
+
+  input, textarea, select {
+    width: 100%;
+  }
+}
+
+.form-field-xs {
+  @include form-field-width(58px);
+}
+
+.form-field-xs-1 {
+  @include form-field-width(81px);
+}
+.form-field-xs-2 {
+  @include form-field-width(104px);
+}
+
+.form-field-xs-3 {
+  @include form-field-width(127px);
+}
+
+.form-field-sm {
+  @include form-field-width(150px);
+}
+
+.form-field-sm-1 {
+  @include form-field-width(192px);
+}
+
+.form-field-sm-2 {
+  @include form-field-width(234px);
+}
+
+.form-field-sm-3 {
+  @include form-field-width(276px);
+}
+
+.form-field-sm-4 {
+  @include form-field-width(284px);
+}
+
+.form-field-md {
+  @include form-field-width(316px);
+}
+
+.form-field-md-1 {
+  @include form-field-width(358px);
+}
+
+.form-field-md-2 {
+  @include form-field-width(400px);
+}
+
+.form-field-md-3 {
+  @include form-field-width(442px);
+}
+
+.form-field-lg {
+  @include form-field-width(482px);
+}
+
+.form-field-lg-1 {
+  @include form-field-width(522px);
+}
+
+.form-field-lg-2 {
+  @include form-field-width(562px);
+}
+
+.form-field-lg-3 {
+  @include form-field-width(600px);
+}
+
+.form-field-xl {
+  @include form-field-width(642px);
+}
+
+.form-field-xl-1 {
+  @include form-field-width(682px);
+}
+
+.form-field-xl-2 {
+  @include form-field-width(722px);
+}
+
+.form-field-xl-3 {
+  @include form-field-width(762px);
+}
+
+.form-field-no-hint-wrapper {
+  margin-bottom: -1.25em;
+}

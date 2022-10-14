@@ -1,0 +1,7 @@
+@import "src/styles/partials/variables";
+@import "src/styles/partials/mixins";
+
+.update-not-in-use {
+  height: 56px;
+  background-color: $color-yellow;
+}

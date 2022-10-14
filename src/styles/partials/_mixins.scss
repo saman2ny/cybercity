@@ -1,0 +1,76 @@
+@import './variables';
+
+// Background image with radial gradient
+@mixin bg-img-gradient($url) {
+  background-image: url($url), radial-gradient(41.92% 41.92% at 50% 50%, rgba(0, 62, 117, 0.66) 0%, rgba(57, 105, 148, 0.42) 100%);
+}
+.img {
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+
+@mixin bg-img($url) {
+  @extend .img;
+  background: url($url);
+}
+
+@mixin bg-img-gradient($url) {
+  @extend .img;
+  background-image: url($url), linear-gradient(90deg, $color-pale-1 5.18%, $color-neutral-blue-8 94.26%);
+}
+
+@mixin oval-background($background, $icon-width: 30px, $icon-height: 30px, $size: 80px) {
+  background: $background;
+  border-radius: 50%;
+  opacity: 0.96;
+  height: $size;
+  width: $size;
+
+  min-height: $size;
+  min-width: $size;
+
+  place-content: center;
+  align-items: center;
+  display: flex;
+
+  i-feather {
+    color:white;
+    width: $icon-width;
+    height: $icon-height;
+  }
+}
+
+@mixin absolute-center() {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin overflow-ellipsis($max-width) {
+  width: $max-width;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap
+}
+
+@mixin max-width($max-width) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & > * {
+    max-width: $max-width;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-self: center;
+  }
+}
+
+@mixin col-width($width) {
+  flex: 0 1 $width;
+  max-width: $width;
+  min-width: $width;
+  word-wrap: break-word; 
+}

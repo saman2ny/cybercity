@@ -1,0 +1,4 @@
+<mat-error @error *ngIf="control.invalid && (control.dirty || control.touched) && errorKey">
+  <!-- display first error -->
+  {{'ERRORS.' + errorKey | transloco}}
+</mat-error>

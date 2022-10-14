@@ -1,0 +1,18 @@
+<div class="layout">
+  <app-toolbar class="w-100-percent pt-8"></app-toolbar>
+   <mat-sidenav-container fxFlex="1 1 auto">
+    <mat-sidenav class="left-sidenav" #leftSidenav
+                 [autoFocus]="false"
+                 [(opened)]="sidenavService.leftExpanded"
+                 (closed)="sidenavService.resetAfterClosed()" position="start">
+      <ng-container #container></ng-container>
+    </mat-sidenav>
+
+    <mat-sidenav-content (scroll)="scroll($event)" #scrollableContainer class="content-wrapper" fxLayout="column" fxLayoutAlign="start center">
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer class="footer"></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

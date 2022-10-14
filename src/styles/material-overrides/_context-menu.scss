@@ -1,0 +1,28 @@
+@import "../../styles/partials/variables";
+
+.context-menu-icon {
+  background: unset;
+
+  i-feather {
+    width: 24px !important;
+    height: 24px !important;
+    color: $color-primary !important;
+  }
+}
+
+.context-menu-dropdown {
+  border-radius: 2px !important;
+
+  i-feather {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    color: $color-primary !important;
+    align-self: start;
+  }
+
+  button {
+    padding: 0 10px !important;
+    background: unset !important;
+  }
+}

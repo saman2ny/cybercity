@@ -1,0 +1,17 @@
+@import "src/styles/partials/variables";
+
+.vertical-menu {
+  overflow-y: auto;
+  .menu-item {
+    padding: 12px;
+    cursor: pointer;
+    color: $color-neutral-blue-1;
+    font-weight: 600;
+    border-radius: 4px;
+
+    &.selected {
+      background-color: $color-neutral-blue-8;
+      color: $color-primary;
+    }
+  }
+}

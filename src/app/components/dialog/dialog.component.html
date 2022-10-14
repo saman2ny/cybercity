@@ -1,0 +1,14 @@
+<div class="default-dialog-wrapper mat-elevation-z10">
+  <div class="content" fxLayout="row">
+    <div fxLayout="column" fxLayoutAlign="space-between start"  >
+      <h1 class="mat-title mb-30">{{title}}</h1>
+      <div class="mat-title fw-500 mb-30">
+        <input type="text" name="users">
+      </div>
+      <div fxLayout="row">
+        <button class="white mr-12" [matDialogClose]="false">CANCEL</button>
+        <button class="accent" [matDialogClose]="true">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

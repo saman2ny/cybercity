@@ -1,0 +1,75 @@
+<div class="contact-us-dialog" fxLayout="column">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div class="mat-title mb-4">{{'CONTACT_US.CONTACT_US' | transloco}}</div>
+    <i-feather name="X" (click)="sidenavService.closeLeftSidenav()"></i-feather>
+  </div>
+  <div *ngIf="!messageSentTry" fxLayoutAlign="row" class="mb-16">
+    <div class="mat-subheading-2 subtitle-text">{{'CONTACT_US.WHATEVER_IS_IN_YOUR_MIND' | transloco}}</div>
+  </div>
+
+  <!-- validations? -->
+  <ng-container *ngIf="!messageSentTry;else sentMessageResult;">
+    <form [formGroup]="contactUsForm" class="mb-20">
+      <div class="form-field" fxLayout="column">
+        <label class="mb-6 mat-title">{{'CONTACT_US.YOUR_MESSAGE' | transloco | uppercase}}</label>
+        <textarea class="p-10" cdkTextareaAutosize placeholder="{{'CONTACT_US.TYPE_MESSAGE' | transloco}}" formControlName="message"
+          maxlength="300" required>
+        </textarea>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <app-error [control]="contactUsForm.get('message')"></app-error>
+          <span class="subtitle-text">{{contactUsForm.get('message').value.length}}/300</span>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template #sentMessageResult>
+    <span @successMessage *ngIf="sent;else failureMessage">
+      <div fxLayout="column" fxLayoutAlign="center center" class="message-class-success mb-20 ml-20">
+        <div class="green-oval mt-150 mb-20">
+          <i-feather name="check"></i-feather>
+        </div>
+        <div class="mat-headline mb-20">{{'CONTACT_US.MESSAGE_SENT' | transloco}}</div>
+        <div class="subtitle-text mb-50">{{'CONTACT_US.WE_WILL_CONTACT_YOU' | transloco}}</div>
+      </div>
+    </span>
+    <ng-template #failureMessage>
+      <div fxLayout="column" fxLayoutAlign="center center" class="test">
+        <div class="red-oval mt-30 mb-20">
+          <i-feather class="cursor-default" name="X"></i-feather>
+        </div>
+        <div class="mat-headline mb-20">{{'CONTACT_US.MESSAGE_NOT_SEND' | transloco}}</div>
+        <div class="subtitle-text">{{'CONTACT_US.NOT_SEND_HINT' | transloco}}</div>
+        <a href="mailto:bankingcloudsupport@temenos.com" class="mat-subheading-2">{{'CONTACT_US.SUPPORT_MAIL' | transloco}}</a>
+        <div fxLayout="column" class="mt-20 mb-50 message-class">
+          <div fxLayout="row">
+            <label class="mb-4 mat-title">{{'CONTACT_US.YOUR_MESSAGE' | transloco}}</label>
+            <img class="ml-20 icon mt-10" (click)="copyText()" src="/assets/images/Vector.svg">
+            <div class="mat-subheading-1 ml-4 mb-0 mt-4" *ngIf="displayTooltip">{{'CONTACT_US.TEXT_COPIED' | transloco}}
+            </div>
+          </div>
+          <textarea id="text-content" class="inner-text-area subtitle-text pt-20 pr-30" [(ngModel)]="typedMessage" readonly="true"></textarea>
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+
+  <span fxFlex="1 1 auto"></span>
+  <mat-divider class="mb-32"></mat-divider>
+
+  <ng-container *ngIf="!messageSentTry; else showCloseButton">
+    <div fxLayout="row" dir="rtl" fxLayoutGap="16px">
+      <button class="accent" type="button" [disabled]="contactUsForm.get('message').value.length == 0"
+        (click)="sendMessage()">{{'BUTTONS.SEND' | transloco}}</button>
+      <button class="white" type="button" (click)="sidenavService.closeLeftSidenav()">{{'BUTTONS.CANCEL' | transloco}}
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-template #showCloseButton>
+    <div fxLayout="row" dir="rtl">
+      <button type="button" class="accent w-100-percent"
+        (click)="sidenavService.closeLeftSidenav()">{{'BUTTONS.CLOSE' | transloco}}</button>
+    </div>
+  </ng-template>
+</div>

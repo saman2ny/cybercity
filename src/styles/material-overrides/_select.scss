@@ -1,0 +1,100 @@
+@import "../partials/variables";
+
+mat-select {
+  display: block;
+  @extend .mat-body;
+  color: $color-primary;
+  border: 1px solid $color-neutral-blue-5;
+  box-sizing: border-box;
+  resize: none;
+  padding: 10px 30px 0px 10px;
+  height: 48px;
+  appearance: none;
+  cursor: pointer;
+
+  background: url('../../assets/icons/fi_chevron-down.svg') no-repeat  96% 50% / 8%;
+
+  &:hover {
+    border: 1px solid $color-primary;
+  }
+
+  &:disabled {
+    background-color: $color-neutral-blue-8;
+    border-color: $color-neutral-blue-5;
+    color: $color-neutral-blue-5;
+  }
+
+  // Does not have selected value
+  &.ng-invalid {
+    color: $color-neutral-blue-5;
+  }
+
+  // Has selected value
+  &.ng-valid {
+    border: 1px solid $color-primary;
+  }
+
+  mat-option {
+    color: $color-primary !important;
+  }
+
+  &.ng-touched.ng-invalid {
+    border: 1px solid $color-temenos-orange;
+  }
+}
+
+.mat-select-arrow {
+  border: none !important;
+}
+
+.mat-select-trigger {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.mat-select-panel {
+  min-width: calc(100% + 42px) !important;
+  box-shadow: none !important;
+  border: 1px solid $color-neutral-3 !important;
+  border-radius: 0px !important;
+}
+
+.mat-option {
+  height: 30px !important;
+  background: none !important;
+
+  &:hover {
+    background: #D7EEF9 !important;
+  }
+}
+
+.mat-option.mat-active {
+  background: none !important;
+
+  &:hover {
+    background: #D7EEF9 !important;
+  }
+}
+
+.mat-pseudo-checkbox {
+  color: $color-primary !important;
+}
+
+.mat-pseudo-checkbox.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+  border-color: $color-primary !important;
+}
+
+.mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate,
+.mat-accent .mat-pseudo-checkbox-checked,
+.mat-accent .mat-pseudo-checkbox-indeterminate {
+  background: none !important;
+}
+
+.mat-pseudo-checkbox::after {
+  color: $color-primary !important;
+}
+
+.multi-select-panel {
+  transform: translateX(-11px) translateY(37px) !important;
+}

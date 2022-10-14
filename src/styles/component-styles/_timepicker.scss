@@ -1,0 +1,42 @@
+@import '../partials/variables';
+
+.timepicker {
+  .timepicker__header {
+    background-color: $color-primary !important;
+  }
+
+  .clock-face__clock-hand {
+    background-color: $color-primary !important;
+
+    &::after {
+      background-color: $color-primary !important;
+    }
+
+    &::before {
+      border-color: $color-primary !important;
+    }
+  }
+
+  .clock-face__number {
+    > span.active {
+      background-color: $color-primary !important;
+    }
+  }
+
+  button.timepicker-button {
+    color: $color-primary !important;
+  }
+
+  position: relative;
+
+  input {
+    padding-right: 44px;
+  }
+
+  .timepicker-icon {
+    position: absolute;
+    right: 10px;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+}

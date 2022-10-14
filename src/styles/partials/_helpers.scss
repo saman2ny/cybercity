@@ -1,0 +1,238 @@
+@import "mixins";
+
+/*
+  Spacing helpers
+
+  Generates margin and padding helper classes. For each size from 0 to 256 with 2px step.
+  Classes start with letter m or p, optional direction letter - t (top), r (right), b (bottom), l (left) and size.
+  E.g.: m-0 (margin: 0px), pl-16 (padding-left: 16px), etc.
+*/
+$sides: (top: t, bottom: b, left: l, right: r);
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @for $index from 0 through 128 {
+    $size: $index * 2;
+    $length: #{$size}px;
+
+    .#{$abbrev}-#{$size} {
+        #{$prop}: $length !important;
+    }
+
+    .#{$abbrev}--#{$size} {
+      #{$prop}: -$length !important;
+    }
+
+    @each $side, $sideAbbrev in $sides {
+      .#{$abbrev}#{$sideAbbrev}-#{$size} {
+        #{$prop}-#{$side}: $length !important;
+      }
+    }
+
+    @each $side, $sideAbbrev in $sides {
+      .#{$abbrev}#{$sideAbbrev}--#{$size} {
+        #{$prop}-#{$side}: -$length !important;
+      }
+    }
+  }
+}
+
+@for $index from 0 through 128 {
+  $size: $index * 2;
+  $length: #{$size}px;
+
+  .h-#{$size} {
+    height: $length !important;
+  }
+
+  .w-#{$size} {
+    width: $length !important;
+  }
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+// Generate cursor classes. Add additional cursors if needed. E.g. cursor-pointer
+$cursors: grab, help, move, no-drop, not-allowed, pointer, text, default;
+@each $cursor in $cursors {
+  .cursor-#{$cursor} {
+    cursor: #{$cursor} !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.ws-nowrap {
+  white-space: nowrap;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll !important;
+}
+
+.outline-none {
+  outline: none;
+}
+
+.divider {
+  width: 100%;
+  height: 0;
+  border: 4px solid #D7EEF9;
+}
+
+.divider-sm {
+  border: 1px solid $color-neutral-blue-7;
+  width: 100%;
+
+  &.submenu {
+    width: 90% !important;
+    align-self: center;
+  }
+}
+
+// Widths
+.w-100-percent {
+  width: 100% !important;
+}
+.w-50-percent {
+  width: 50% !important;
+}
+
+.w-max-content {
+  width: max-content;
+}
+
+// Height
+.h-100-percent {
+  height: 100%;
+}
+
+/* To use max width should place a div inside .max-width-lg element which will get the max-width property. E.g.:
+  <section class="max-width-lg">
+    <div>This div will have max width</div>
+  </section>
+*/
+.max-width-lg {
+  @include max-width(1440px);
+}
+
+.max-width-md {
+  @include max-width(1156px);
+}
+
+// Background images & Illustrations
+.bg-img-lg {
+  min-height: 39rem;
+  background-position: 100% 0;
+  background-size: cover;
+  background-blend-mode: multiply, normal;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, $color-pale-1 5.18%, $color-neutral-blue-8 94.26%);
+}
+
+// Traffic lights
+.traffic-light {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+
+  &[color="green"] {
+    background-color: #7DCB6F;
+  }
+
+  &[color="orange"] {
+    background-color: $color-accent-3;
+  }
+
+  &[color="blue"] {
+    background-color: $color-temenos-cyan;
+  }
+
+  &[color="red"] {
+    background-color: $color-warn-solid;
+  }
+
+  &[color="blue-neutral"] {
+    background-color: $color-neutral-blue-2;
+  }
+}
+
+.btn-font {
+  font-family: $default-font;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+.link-btn-font {
+  font-family: $default-font;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 1.25px;
+}
+
+.btn-font-rounded {
+  font-family: $default-font;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.25px;
+}
+
+.overline-font {
+  font-family: $default-font;
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px;
+}
+
+.body2-font {
+  font-family: $default-font;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500 !important;
+  letter-spacing: 0.25px;
+}
+
+.upgrade-plans-backdrop {
+  background: rgba(0, 62, 117, 0.25);
+}
+
+// Word break
+.word-break-word {
+  word-break: break-word;
+}
+
+.display-inline-block{
+  display: inline-block;
+}

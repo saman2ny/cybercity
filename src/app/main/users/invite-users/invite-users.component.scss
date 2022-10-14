@@ -1,0 +1,45 @@
+@import "src/styles/partials/mixins";
+
+
+.contact-us-dialog {
+  min-height: 100%;
+  overflow-x: hidden;
+  max-width: 95%;
+}
+
+.form-field {
+  width: 1000px;
+  max-width: 1000px;
+}
+
+.form-field > label {
+  font-size: 20px !important;
+}
+
+input, textarea, select, .message-class-success {
+  width: 900px;
+}
+
+button {
+  width: 122px;
+  height: 48px;
+}
+
+.inner-text-area {
+  border: none !important;
+  background: $color-neutral-blue-8;
+  width: 470px !important;
+}
+
+.field-filter-row {
+  align-items: center !important;
+  height: 30px;
+
+  &:hover {
+    background-color: #d7eef9;
+  }
+}
+
+.form-field-multiple {
+  max-width: 500px;
+}

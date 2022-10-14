@@ -1,0 +1,36 @@
+@mixin icon($size) {
+  text-align: center;
+  width: $size !important;
+  height: $size !important;
+
+  display: flex !important;
+  place-content: center;
+  align-items: center;
+
+  svg {
+    width: $size;
+    height: $size;
+  }
+}
+
+i-feather {
+  &[name='X'] {
+    cursor: pointer;
+  }
+}
+
+.icon-sm {
+  @include icon(16px);
+}
+
+.icon-md {
+  @include icon(21px);
+}
+
+.icon-md-1 {
+  @include icon(24px);
+}
+
+.icon-lg {
+  @include icon(32px);
+}

@@ -1,0 +1,23 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+    <i-feather name="align-justify" class="icon-lg cursor-pointer ml-20"
+    (click)="openDeployInstance()"></i-feather>
+
+  <div fxLayout="row">
+    <div fxLayoutAlign="center center">
+      <img src="assets/images/cybercity.jpeg" class="logo" [routerLink]="['/', RouterSegments.DASHBOARD]">
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="end end">
+    <button fxLayoutAlign="center center" class="menu-button" [matMenuTriggerFor]="userMenu">
+      <div>m</div>
+    </button>
+
+    <mat-menu #userMenu="matMenu">
+      <button mat-menu-item [routerLink]="['/', RouterSegments.SETTINGS]">{{ 'USER_MENU.SETTINGS' | transloco
+        }}</button>
+      <button mat-menu-item>{{ 'USER_MENU.LOGOUT' | transloco }}</button>
+    </mat-menu>
+  </div>
+</div>
+<mat-divider class="m-0 neutral-2"></mat-divider>

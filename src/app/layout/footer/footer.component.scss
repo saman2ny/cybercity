@@ -1,0 +1,22 @@
+@import "../../../styles/partials/variables";
+
+.logo {
+  height: 32px;
+  width: auto;
+  cursor: pointer;
+  outline: none;
+  margin: 12px 0;
+}
+
+.footer {
+  background-color: $color-primary;
+  text-align-last: center;
+  color: white;
+  font-size: 14px;
+
+  a {
+    color: white;
+    padding: 0;
+    border: none;
+  }
+}

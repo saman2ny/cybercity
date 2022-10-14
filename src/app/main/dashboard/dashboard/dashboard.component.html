@@ -1,0 +1,58 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <google-chart [data]="barChartdata" [columns]="barColumns" type="ColumnChart" [options]="barChartdataOptions">
+    </google-chart>
+  </div>
+
+
+  <div fxLayout="row" fxLayoutAlign="space-between">
+
+    <div fxLayout="col">
+      <google-chart [data]="pieChartdata" [columns]="pieColumns" type="PieChart" [options]="pieChartdataOptions">
+      </google-chart>
+    </div>
+    <div fxLayout="col">
+      <google-chart [data]="lineChartdata" [columns]="lineColumns" type="LineChart" [options]="lineChartdataOptions">
+      </google-chart>
+    </div>
+  </div>
+
+
+  <h2>Page 2</h2>
+
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <google-chart [data]="combinationChartdata" [columns]="combinationColumns" type="ComboChart"
+      [options]="combinationChartdataOptions">
+    </google-chart>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <div fxLayout="col">
+      <google-chart [data]="scatteredPieChartdata" [columns]="scatteredPieColumns" type="PieChart"
+        [options]="scatteredPieChartdataOptions">
+      </google-chart>
+    </div>
+    <div fxLayout="col">
+      <ul>
+        <li>
+          <h3>Monthly targets</h3>
+        </li>
+        <li>
+          <h4>Set by boss: 45</h4>
+        </li>
+        <li>
+          <h4>Set by me: 32</h4>
+        </li>
+        <li>
+          <h4>Currently Closed: 20</h4>
+        </li>
+        <li>
+          <h4>Days remaining: 20</h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,41 @@
+@import "src/styles/partials/variables";
+@import "src/styles/partials/mixins";
+
+.loader-container {
+  position: relative;
+
+  &, & > .inner-content, & > mat-progress-spinner {
+    width: 270px !important;
+    height: 270px !important;
+
+    & .inner-stroke, & .outer-stroke {
+      @include absolute-center();
+
+      &, & > svg {
+        height: 100% !important;
+        width: 100% !important;
+      };
+    }
+
+    & .inner-content {
+      height: 90% !important;
+      width: 90% !important;
+      background: linear-gradient(90deg, #162F4D 5.18%, #11579A 94.26%);
+      border-radius: 50%;
+      @include absolute-center();
+
+      & > img {
+        height: 50%;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.outer-stroke > svg > circle {
+  stroke: url('#green-gradient');
+}
+
+.outer-stroke circle {
+  transition: stroke-dashoffset 500ms linear !important;
+}

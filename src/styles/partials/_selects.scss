@@ -1,0 +1,45 @@
+@import "variables";
+
+select {
+  display: block;
+  @extend .mat-body;
+  color: $color-primary;
+  border: 1px solid $color-neutral-blue-5;
+  box-sizing: border-box;
+  resize: none;
+  padding-left: 10px;
+  padding-right: 30px;
+  height: 48px;
+  appearance: none;
+  cursor: pointer;
+
+  background: url('/assets/icons/fi_chevron-down.svg') no-repeat  96% 50% / 8%;
+
+  &:hover {
+    border: 1px solid $color-primary;
+  }
+
+  &:disabled {
+    background-color: $color-neutral-blue-8;
+    border-color: $color-neutral-blue-5;
+    color: $color-neutral-blue-5;
+  }
+
+  // Does not have selected value
+  &.ng-invalid {
+    color: $color-neutral-blue-5;
+  }
+
+  // Has selected value
+  &.ng-valid {
+    border: 1px solid $color-primary;
+  }
+
+  option {
+    color: $color-primary !important;
+  }
+
+  &.ng-touched.ng-invalid {
+    border: 1px solid $color-temenos-orange;
+  }
+}

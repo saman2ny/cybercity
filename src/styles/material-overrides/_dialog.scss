@@ -1,0 +1,17 @@
+.default-dialog-wrapper {
+  max-height: 180vh;
+  min-height: 600px;
+  min-width: 600px;
+  overflow: hidden;
+
+  mat-dialog-container {
+    padding: 0 !important;
+  }
+}
+
+
+.flex-dialog {
+  .mat-dialog-container {
+    display: flex;
+  }
+}

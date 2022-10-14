@@ -1,0 +1,17 @@
+mat-sidenav-container.no-backdrop {
+  .mat-drawer-backdrop.mat-drawer-shown {
+    background-color: transparent !important;
+  }
+}
+
+mat-sidenav {
+  &.mat-drawer-end {
+    max-width: unset !important;
+  }
+
+  .mat-drawer-inner-container {
+    overflow: initial;
+    height: 100%;
+    padding: 32px;
+  }
+}

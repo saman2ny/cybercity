@@ -1,0 +1,66 @@
+@import "../../styles/partials/variables";
+
+.mat-form-field {
+  font-size: 16px !important;
+  line-height: 24px !important;
+  letter-spacing: 0.5px !important;
+  font-weight: 400 !important;
+}
+
+.mat-form-field-appearance-outline {
+  .mat-form-field-outline {
+    top: 0 !important;
+  }
+
+  .mat-form-field-outline-start {
+    border-radius: 0px !important;
+  }
+
+  .mat-form-field-outline-end {
+    border-radius: 0px !important;
+  }
+
+  .mat-form-field-flex {
+    padding: 10px !important;
+  }
+
+  .mat-form-field-infix {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .mat-form-field-outline-thick {
+    display: none !important;
+  }
+
+  .mat-form-field-outline {
+    color: $color-neutral-blue-5 !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+
+  &:hover .mat-form-field-outline {
+    color: $color-primary !important;
+  }
+
+  &.mat-focused .mat-form-field-outline {
+    color: $color-primary !important;
+  }
+
+  &.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline {
+    color: $color-temenos-orange !important;
+  }
+
+  .mat-form-field-subscript-wrapper {
+    padding: 0 !important;
+    margin-top: 8px !important;
+  }
+
+  .mat-form-field-wrapper{
+    padding-bottom: 0px !important;
+  }
+
+  &.filter-chip > .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+}

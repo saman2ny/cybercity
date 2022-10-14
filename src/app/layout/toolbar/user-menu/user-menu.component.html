@@ -1,0 +1,39 @@
+<div class="max-width-lg">
+  <app-sidenav-header fxLayoutAlign="end end" class="mr-40"></app-sidenav-header>
+</div>
+<!-- <mat-divider class="neutral-2"></mat-divider> -->
+
+<div class="mt-2" fxLayout="column">
+  <ul class="list-style max-width-lg">
+    <li class="pb-20">
+      <button class="btn-link m-0" [routerLink]="['/', RouterSegments.DASHBOARD]"
+        [ngClass]="{'active': ToolbarButton.DASHBOARD === activeLink}">
+        {{ 'TOOLBAR.DASHBOARD' | transloco }}
+      </button>
+    </li>
+    <li class="pb-20">
+      <button class="btn-link" [routerLink]="['/', RouterSegments.DASHBOARD]"
+        [ngClass]="{'active': ToolbarButton.DASHBOARD === activeLink}">
+        Project Details
+      </button>
+    </li>
+    <li class="pb-20">
+      <button class="btn-link" [routerLink]="['/', RouterSegments.DASHBOARD]"
+        [ngClass]="{'active': ToolbarButton.DASHBOARD === activeLink}">
+        Targets
+      </button>
+    </li>
+    <li class="pb-20">
+      <button class="btn-link" [routerLink]="['/', RouterSegments.DASHBOARD]"
+        [ngClass]="{'active': ToolbarButton.DASHBOARD === activeLink}">
+        Target vs achieved
+      </button>
+    </li>
+    <li class="pb-20">
+      <button class="btn-link" [routerLink]="['/', RouterSegments.DASHBOARD]"
+        [ngClass]="{'active': ToolbarButton.DASHBOARD === activeLink}">
+        Sales Leaderboard
+      </button>
+    </li>
+  </ul>
+</div>

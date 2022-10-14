@@ -1,0 +1,38 @@
+/**
+* Generate font-weight classes. E.g.: fw-400, fw-bold, etc.
+*/
+$fontWeights: 100, 200, 300, 400, 500, 600, 700, 800, 900, bold, bolder;
+@mixin generate-font-weight-classes() {
+  @each $fontWeight in $fontWeights {
+    .fw-#{$fontWeight} {
+      font-weight: $fontWeight !important;
+    }
+  }
+}
+@include generate-font-weight-classes();
+
+/**
+* Generate text-decoration-line classes. E.g.: tdl-underline, tdl-none, etc.
+*/
+$textDecorationLines: none, underline, overline, line-through;
+@mixin generate-text-decoration-line-classes() {
+  @each $textDecorationLine in $textDecorationLines {
+    .tdl-#{$textDecorationLine} {
+      text-decoration-line: $textDecorationLine !important;
+    }
+  }
+}
+@include generate-text-decoration-line-classes();
+
+/**
+* Generate text-align classes. E.g.: ta-center, ta-justify, etc.
+*/
+$textAligns: left, right, center, justify, initial, inherit;
+@mixin generate-text-allign-classes() {
+  @each $textAlign in $textAligns {
+    .ta-#{$textAlign} {
+      text-align: $textAlign !important;
+    }
+  }
+}
+@include generate-text-allign-classes();

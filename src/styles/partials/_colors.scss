@@ -1,0 +1,114 @@
+@use '@angular/material' as mat;
+@import "@angular/material/theming";
+@import "palettes";
+
+$matPalettes: (
+  primary: $palette-primary,
+  accent: $palette-accent,
+  warn: mat.$red-palette
+);
+
+$matHues: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
+
+@mixin generate-color-classes($colorName, $color, $contrastColor, $hue) {
+  .#{$colorName}#{$hue}-bg {
+    background-color: $color !important;
+  }
+
+  .#{$colorName}#{$hue} {
+    background-color: $color !important;
+    color: $contrastColor !important;
+  }
+
+  .#{$colorName}#{$hue}-fg {
+    color: $color !important;
+  }
+}
+
+@mixin generate-classes($palettes) {
+
+  @each $paletteName,
+  $palette in $palettes {
+    $contrasts: map-get($palette, 'contrast');
+
+    @each $hue in $matHues {
+      $color: map-get($palette, $hue);
+      $contrast: map-get($contrasts, $hue);
+
+      @if ($color != null and $contrast != null) {
+        @include generate-color-classes($paletteName, $color, $contrast, '-#{$hue}');
+      }
+    }
+  }
+}
+
+@include generate-classes($matPalettes);
+
+/* Foreground colors */
+
+.white-fg {
+  color: #FFFFFF;
+}
+
+
+/* Background colors */
+
+.white-bg {
+  background-color: #FFFFFF;
+}
+
+.green-1-bg {
+  background-color: $color-green-1;
+}
+
+.green-1-fg {
+  color: $color-green-1;
+}
+
+.cyan-bg {
+  background-color: $color-temenos-cyan;
+}
+
+.cyan-fg {
+  color: $color-temenos-cyan;
+}
+
+.neutral-blue-6-bg {
+  background-color: $color-neutral-blue-6 !important;
+}
+
+.warn-solid-bg {
+  background-color: $color-warn-solid !important;
+}
+
+.warn-solid-fg {
+  color: $color-warn-solid !important;
+}
+
+.accent-1-bg {
+  background-color: $color-accent-1 !important;
+}
+
+.accent-5-bg {
+  background-color: $color-accent-5 !important;
+}
+
+.bg-approval-pending {
+  background-color: $color-pending;
+}
+
+.bg-approved {
+  background-color: $color-approved;
+}
+
+.orange-20-bg {
+  background-color: $color-temenos-orange-20;
+}
+
+.neutral-blue-4-fg {
+  color: $color-neutral-blue-4 !important;
+}
+
+.color-neutral-4-fg {
+  color: $color-neutral-4 !important;
+}

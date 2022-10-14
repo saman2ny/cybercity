@@ -1,0 +1,43 @@
+@import "./variables";
+
+table {
+  border-collapse:separate;
+  border-spacing: 0 8px;
+
+  .table-head {
+    background: $color-neutral-blue-7;
+    height: 40px;
+    padding: 8px 8px;
+  }
+
+  .first-th {
+    padding: 8px 0 8px 16px;
+  }
+
+  .table-tr {
+    background: #FFFFFF;
+    filter: drop-shadow(0px 2px 4px rgba(25, 57, 89, 0.22));
+    padding: 0 8px;
+  }
+
+  th {
+    height: 40px;
+    padding: 0 8px;
+  }
+
+  td {
+    height: 64px;
+    padding: 0 8px;
+  }
+}
+
+.table-tr {
+  background: #FFFFFF;
+  filter: drop-shadow(0px 2px 4px rgba(25, 57, 89, 0.22));
+  margin-bottom: 8px;
+}
+
+.row-content {
+  min-height: 62px;
+  padding: 16px;
+}
